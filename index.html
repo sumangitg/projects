@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="javascript/script.js"></script>
+
+</head>
+<body>
+  <div class="mainContainer">
+  <h4 class="game-concept">
+    Rock beats Scissors, Scissors beats Paper, Paper beats Rock
+  </h4>
+  <h1 class="game-headLine">
+    Rock<img src="images/rock.png" class="gameImage1"> Paper<img src="images/paper.png" class="gameImage1"> Scissors<img src="images/scissors.png" class="gameImage1">
+  </h1>
+  <button class="rock-paper-scissors" onclick="
+  playGame('rock');
+">
+    <img src="images/rock.png" alt="rpck" class="gameImage">
+  </button>
+  
+  <button class="rock-paper-scissors" onclick="
+  playGame('paper');
+">
+  <img src="images/paper.png" alt="paper" class="gameImage">
+  </button>
+<button class="rock-paper-scissors" onclick="
+playGame('scissors');
+">
+  <img src="images/scissors.png" alt="scissors" class="gameImage">
+</button>
+<p class="your-result"></p>
+<p class="result-js"></p>
+<p class="result-score" >
+Lets play from previous record
+</p>
+<button onclick="
+ score.wins=0;
+ score.losses=0;
+ score.draw=0;
+localStorage.removeItem('scorevalue');
+updateScoreElement();
+document.querySelector('.your-result').innerHTML=``;
+document.querySelector('.result-js').innerHTML=``;
+" class="reset-button">
+  Reset Score
+</button>
+<button onclick="autoPlay();" class="autoButton">
+  auto play
+</button>
+</div>
+</body>
+</html>
